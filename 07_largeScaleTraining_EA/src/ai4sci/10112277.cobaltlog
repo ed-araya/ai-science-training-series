@@ -1,0 +1,5 @@
+Jobid: 10112277
+qsub -I -n 1 -t 15 -A ALCFAITP -q single-gpu
+Tue Nov 01 20:59:41 2022 +0000 (UTC) submitted with cwd set to: /lus/swift/home/earaya/ai-science-training-series/07_largeScaleTraining/src/ai4sci
+jobid 10112277 submitted from terminal /dev/pts/10
+Tue Nov 01 21:02:50 2022 +0000 (UTC) Info: user delete requested; removing job from the queue

@@ -1,0 +1,24 @@
+Jobid: 10112290
+qsub -I -n 1 -t 60 -A ALCFAITP -q single-gpu
+Tue Nov 01 21:13:28 2022 +0000 (UTC) submitted with cwd set to: /lus/swift/home/earaya/ai-science-training-series/07_largeScaleTraining/src/ai4sci
+jobid 10112290 submitted from terminal /dev/pts/10
+Tue Nov 01 21:14:25 2022 +0000 (UTC) 
+Tue Nov 01 21:14:25 2022 +0000 (UTC) Command: '/usr/bin/ssh' 'thetagpu06-gpu0' '/usr/bin/cobalt-launcher.py' '--nf' '/var/tmp/cobalt.10112290' '--jobid' '10112290' '--cwd' '/lus/swift/home/earaya/ai-science-training-series/07_largeScaleTraining/src/ai4sci' '--env' 'COBALT_JOBID=10112290' '/bin/sleep' '3600'
+Tue Nov 01 21:14:25 2022 +0000 (UTC) 
+Tue Nov 01 21:14:25 2022 +0000 (UTC) Environment:
+Tue Nov 01 21:14:25 2022 +0000 (UTC) SHELL=/bin/bash
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_NODEFILE=/tmp/tmpvBFA34
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_PARTNAME=thetagpu06-gpu0
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_JOBID=10112290
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_STARTTIME=1667337249
+Tue Nov 01 21:14:25 2022 +0000 (UTC) LOGNAME=earaya
+Tue Nov 01 21:14:25 2022 +0000 (UTC) USER=earaya
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_ENDTIME=1667340849
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_PARTSIZE=1
+Tue Nov 01 21:14:25 2022 +0000 (UTC) HOME=/home/earaya
+Tue Nov 01 21:14:25 2022 +0000 (UTC) COBALT_JOBSIZE=1
+Tue Nov 01 21:14:25 2022 +0000 (UTC) 
+Tue Nov 01 21:14:25 2022 +0000 (UTC) Info: stdin received from /dev/null
+Tue Nov 01 21:14:25 2022 +0000 (UTC) Info: stdout sent to /lus/swift/home/earaya/ai-science-training-series/07_largeScaleTraining/src/ai4sci/10112290.output
+Tue Nov 01 21:14:25 2022 +0000 (UTC) Info: stderr sent to /lus/swift/home/earaya/ai-science-training-series/07_largeScaleTraining/src/ai4sci/10112290.error
+Tue Nov 01 21:14:25 2022 +0000 (UTC) 

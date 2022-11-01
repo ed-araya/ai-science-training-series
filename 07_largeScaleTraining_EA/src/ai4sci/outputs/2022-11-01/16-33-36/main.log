@@ -1,0 +1,16 @@
+[2022-11-01 16:33:38,073][ai4sci.ilsvrc_dataset][INFO] - input filelist contains 1281167 files, estimated batches per rank 625
+[2022-11-01 16:33:40,253][ai4sci.ilsvrc_dataset][INFO] - input filelist contains 50000 files, estimated batches per rank 24
+[2022-11-01 16:34:01,319][ai4sci.trainer][INFO] - [0] [0/1: 0 / 160145 (0%)] epoch=0.0000 dt=19.7411 running_loss=0.0000 batch_loss=0.0299 acc=0.0000 batch_acc=0.0039
+[2022-11-01 16:34:08,051][ai4sci.trainer][INFO] - [0] [0/1: 2560 / 160145 (2%)] epoch=0.0000 dt=0.2679 running_loss=0.0005 batch_loss=0.0275 acc=0.0000 batch_acc=0.0000
+[2022-11-01 16:34:13,577][ai4sci.trainer][INFO] - [0] [0/1: 5120 / 160145 (3%)] epoch=0.0000 dt=0.3637 running_loss=0.0010 batch_loss=0.0277 acc=0.0000 batch_acc=0.0000
+[2022-11-01 16:34:21,188][ai4sci.trainer][INFO] - [0] [0/1: 7680 / 160145 (5%)] epoch=0.0000 dt=0.4017 running_loss=0.0014 batch_loss=0.0272 acc=0.0000 batch_acc=0.0000
+[2022-11-01 16:34:27,099][ai4sci.trainer][INFO] - [0] [0/1: 10240 / 160145 (6%)] epoch=0.0000 dt=0.3484 running_loss=0.0018 batch_loss=0.0269 acc=0.0001 batch_acc=0.0000
+[2022-11-01 16:34:33,484][ai4sci.trainer][INFO] - [0] [0/1: 12800 / 160145 (8%)] epoch=0.0000 dt=0.2945 running_loss=0.0023 batch_loss=0.0268 acc=0.0001 batch_acc=0.0039
+[2022-11-01 16:34:38,737][ai4sci.trainer][INFO] - [0] [0/1: 15360 / 160145 (10%)] epoch=0.0000 dt=0.3248 running_loss=0.0027 batch_loss=0.0268 acc=0.0002 batch_acc=0.0000
+[2022-11-01 16:34:46,695][ai4sci.trainer][INFO] - [0] [0/1: 17920 / 160145 (11%)] epoch=0.0000 dt=0.3975 running_loss=0.0031 batch_loss=0.0268 acc=0.0002 batch_acc=0.0000
+[2022-11-01 16:34:53,730][ai4sci.trainer][INFO] - [0] [0/1: 20480 / 160145 (13%)] epoch=0.0000 dt=0.7050 running_loss=0.0036 batch_loss=0.0269 acc=0.0002 batch_acc=0.0078
+[2022-11-01 16:35:02,192][ai4sci.trainer][INFO] - [0] [0/1: 23040 / 160145 (14%)] epoch=0.0000 dt=0.3796 running_loss=0.0040 batch_loss=0.0268 acc=0.0002 batch_acc=0.0000
+[2022-11-01 16:35:09,513][ai4sci.trainer][INFO] - [0] [0/1: 25600 / 160145 (16%)] epoch=0.0000 dt=0.4170 running_loss=0.0044 batch_loss=0.0266 acc=0.0003 batch_acc=0.0000
+[2022-11-01 16:35:16,953][ai4sci.trainer][INFO] - [0] [0/1: 28160 / 160145 (18%)] epoch=0.0000 dt=0.3804 running_loss=0.0048 batch_loss=0.0263 acc=0.0003 batch_acc=0.0039
+[2022-11-01 16:35:22,507][ai4sci.trainer][INFO] - [0] [0/1: 30720 / 160145 (19%)] epoch=0.0000 dt=0.3164 running_loss=0.0053 batch_loss=0.0262 acc=0.0003 batch_acc=0.0039
+[2022-11-01 16:35:29,276][ai4sci.trainer][INFO] - [0] [0/1: 33280 / 160145 (21%)] epoch=0.0000 dt=0.3641 running_loss=0.0057 batch_loss=0.0265 acc=0.0004 batch_acc=0.0000
