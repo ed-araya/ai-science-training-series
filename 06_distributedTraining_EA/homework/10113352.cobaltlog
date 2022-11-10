@@ -1,0 +1,5 @@
+Jobid: 10113352
+qsub -A ALCFAITP -n 1 -q training-gpu -t 20 -I
+Tue Nov 08 03:53:27 2022 +0000 (UTC) submitted with cwd set to: /home/earaya/ai-science-training-series/06_distributedTraining_EA/homework_EA
+jobid 10113352 submitted from terminal /dev/pts/7
+Tue Nov 08 03:56:51 2022 +0000 (UTC) Info: user delete requested; removing job from the queue
