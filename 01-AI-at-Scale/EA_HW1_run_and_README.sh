@@ -5,6 +5,19 @@
 #
 # Problem A
 echo "****** Problem A: Make sure that the single GPU code runs on Polaris."
-echo "Code provided in the lecture was copied to a .py script, and a .sh script was modified to run it"
+echo "  Code provided in the lecture was copied to a .py script,"
+echo "  edited and a .sh script was modified to run it"
 bash EA_HW1_A_run_pytorch_single_GPU_example.sh
+
+# Problem B
+echo "****** Problem B: The counting of ranks, does not necessarily has to be"
+echo "a mix-and-match between mpi4py and PALS. Try to implement the rank"
+echo "counting method using just PALS or mpi4py. "
+echo "device_count() methods can be useful here."
+echo "Comment: Checking online, there seems to be no mpi4py.device_count(), thus" 
+echo "the hint given in the instructions was unclear."
+bash EA_HW1_B_run_ddp_pytorch_2p8_N1_R4.sh
+
+
+
 
