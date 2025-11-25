@@ -8,8 +8,9 @@
 
 Solution: 
 
+
 Summary Table
-==============
+--------------
 
 --n-layers      --tp            Excecution time		Final Loss
 ====================================================================
@@ -22,6 +23,8 @@ Summary Table
 4		4		81.19 seconds		14.32
 
 
+Documentation of different tests:
+----------------------------------
 
 
 First step was to try the example:
