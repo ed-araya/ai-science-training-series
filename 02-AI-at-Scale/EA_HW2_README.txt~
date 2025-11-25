@@ -1,0 +1,25 @@
+#
+#
+# HW2 E. D. Araya
+#
+#
+'''
+Problem A
+ "****** Problem A: "
+echo "-Instructions: Try different combinations of model sizes (layer count with --n-layers=?) and tp-degrees (--tp=?) to get an idea of what works"
+echo "-Solution: 
+
+module use /soft/modulefiles
+module load conda/2025-09-25
+conda activate base
+export PATH="/opt/pbs/bin:${PATH}"  # workaround, for now
+export HF_HOME=./.cache 
+export WANDB_DISABLED="true" #For disabling "Weights & Biases" experiment tracking
+ezpz-launch python3 -m ezpz.examples.fsdp_tp --dataset random --tp=4 #--n-layers=8
+
+
+
+"
+
+
+
