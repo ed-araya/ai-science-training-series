@@ -171,7 +171,7 @@ Note that all that should be needed for this exercise is to change the values of
 
 The script will generate a figure with the results of the active learning loop called `parsl_ml_in_the_loop.png`. Use this figure to determine the performance of your tests. Once ready to submit, simply commit the repository with the updated image showing your best results, which will automatically be populated below in this README file.
 
-![results](./parsl_ml_in_the_loop_ori.png)
+
 
 ### ** Solution **
 
@@ -179,10 +179,24 @@ Implementation formating: (initial_training_count, max_training_count, batch_siz
 
 | Implementation   | Greatest Ionization Energy (Ha) | Molecule           | Run time (sec) |
 |------------------|---------------------------------|--------------------|----------------|
-| (8, 24, 4)       | 15.33                           | OC1=NC(F)=CC(=O)O1 | 30.61          |
-|                  |                                 |                    |                |
-|                  |                                 |                    |                |
-|                  |                                 |                    |                |
+| ( 8, 24,  4)     | 15.33                           | OC1=NC(F)=CC(=O)O1 | 30.61          |
+| ( 4, 24,  4)     | 15.13                           | O=C1COC(=O)OC1     | 29.04          |
+| (16, 24,  4)     | 14.36                           | O=C1CC(=O)N2CC12   | 19.81          |
+| ( 8, 48,  4)     | 16.06                           | FC1=CC(=O)OC(F)=N1 | 39.80          |
+| ( 8, 96,  4)     | 16.22                           | FC1=NC(=O)N=C(F)O1 | 71.58          |
+| ( 8, 24,  8)     | 14.36                           | O=C1CC(=O)N2CC12   | 20.19          |
+| ( 8, 24,  2)     | 14.36                           | O=C1CC(=O)N2CC12   | 37.00          |
+| (16, 48,  8)     | 15.36                           | OCC1OC1C(F)(F)F    | 26.88          |
+| (32, 96, 16)     | 15.35			     | N#CC1=C(N=CO1)C#N  | 27.11	   |
+| (16, 96,  8)     | 20.23			     | FC(F)(F)F	  | 43.39	   |
+| (32,192, 16)     | 17.19			     | O=C1ON=NO1	  | 43.32	   |
+| (16,192,  8)     | 20.23			     | FC(F)(F)F 	  | 79.02	   |
+
+Observations: max_training_count seems to be the parameter that dominates the identification of molecules with the greatest ionization energy, although it is more time consuming. 
 
 
+#### Best model: (16, 96,  8)
 ![results](./parsl_ml_in_the_loop.png)
+
+#### Original model: ( 4, 24,  4):
+![results](./parsl_ml_in_the_loop_ori.png)
