@@ -9,7 +9,7 @@
 #PBS -l place=scatter
 #PBS -q debug
 
-cd $PBS_O_WORKDIR
+#cd $PBS_O_WORKDIR
 
 module use /soft/modulefiles
 module load conda/2025-09-25

@@ -171,13 +171,18 @@ Note that all that should be needed for this exercise is to change the values of
 
 The script will generate a figure with the results of the active learning loop called `parsl_ml_in_the_loop.png`. Use this figure to determine the performance of your tests. Once ready to submit, simply commit the repository with the updated image showing your best results, which will automatically be populated below in this README file.
 
-![results](./parsl_ml_in_the_loop.png)
+![results](./parsl_ml_in_the_loop_ori.png)
 
 ** Solution **
 
-| Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (sec) |
-|------------------|-----------------|--------------------|-----------------|---------------|
-| Parsl + futures | 1   | 0.62   | 14.38 / NA   | 26.59 / NA   |
-| Parsl + file system | 1   | 0.62   | 11.22 / 0.094   | 14.90 / 0.422   |
-| DragonHPC + DDict | 1   | 0.62   | 7.01 / 0.233   | 17.92 / 1.194   |
-| ...   | ...   | ...   | ... / ...  | ... / ...  |
+Implementation formating: (initial_training_count, max_training_count, batch_size = 4), 1 node.
+
+| Implementation   | Greatest Ionization Energy (Ha) | Molecule           | Run time (sec) |
+|------------------|---------------------------------|--------------------|----------------|
+| (8, 24, 4)       | 15.33                           | OC1=NC(F)=CC(=O)O1 | 30.61          |
+|                  |                                 |                    |                |
+|                  |                                 |                    |                |
+|                  |                                 |                    |                |
+
+
+![results](./parsl_ml_in_the_loop.png)
