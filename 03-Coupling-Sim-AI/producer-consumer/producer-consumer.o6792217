@@ -1,0 +1,26 @@
+/var/spool/pbs/mom_priv/jobs/6792217.polaris-pbs-01.hsn.cm.polaris.alcf.anl.gov.SC: line 10: PBS: command not found
+
+Lmod is automatically replacing "nvidia/24.11" with "gcc-native/14.2".
+
+
+Lmod is automatically replacing "PrgEnv-nvidia/8.6.0" with "PrgEnv-gnu/8.6.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.32
+
+Running producer-consumer scripts
+with 64 simulations of 512 x 512 grid
+
+Let's do a warmup run first with the Parsl + file system implementation (DISCARD THIS DATA)
+python: can't open file '/home/earaya/6_parsl_fs_producer_consumer.py': [Errno 2] No such file or directory
+
+Running with Parsl writing to the file system
+python: can't open file '/home/earaya/6_parsl_fs_producer_consumer.py': [Errno 2] No such file or directory
+
+Running with DragonHPC
+/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/bin/python3.12: can't open file '/home/earaya/8_dragon_producer_consumer.py': [Errno 2] No such file or directory
+
+Running with Parsl tranfering data through futures (last since it will take longer)
+python: can't open file '/home/earaya/5_parsl_fut_producer_consumer.py': [Errno 2] No such file or directory
+

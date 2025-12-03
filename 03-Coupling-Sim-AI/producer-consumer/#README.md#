@@ -171,8 +171,8 @@ Note: in the polaris login, cd to correct directory, then qsub -q debug `./9_sub
 
 | Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (sec) |
 |------------------|-----------------|--------------------|-----------------|---------------|
-|`qsub -q debug ./9_submit_multinode.sh`, producer-consumer.o6792218|
 `qsub -q debug ./9_submit_multinode.sh`, producer-consumer.o6792218
+
 
 | Parsl + futures  | 1               | 0.62   | 14.38 / NA   | 26.59 / NA   |
 | Parsl + file system | 1   | 0.62   | 11.22 / 0.094   | 14.90 / 0.422   |
