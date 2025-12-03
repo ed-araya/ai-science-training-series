@@ -175,8 +175,7 @@ The script will generate a figure with the results of the active learning loop c
 
 ** Solution **
 
-| Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (s
-ec) |
+| Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (sec) |
 |------------------|-----------------|--------------------|-----------------|---------------|
 | Parsl + futures | 1   | 0.62   | 14.38 / NA   | 26.59 / NA   |
 | Parsl + file system | 1   | 0.62   | 11.22 / 0.094   | 14.90 / 0.422   |
