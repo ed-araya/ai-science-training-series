@@ -173,7 +173,7 @@ The script will generate a figure with the results of the active learning loop c
 
 ![results](./parsl_ml_in_the_loop_ori.png)
 
-** Solution **
+### ** Solution **
 
 Implementation formating: (initial_training_count, max_training_count, batch_size = 4), 1 node.
 
