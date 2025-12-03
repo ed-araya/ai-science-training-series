@@ -172,3 +172,13 @@ Note that all that should be needed for this exercise is to change the values of
 The script will generate a figure with the results of the active learning loop called `parsl_ml_in_the_loop.png`. Use this figure to determine the performance of your tests. Once ready to submit, simply commit the repository with the updated image showing your best results, which will automatically be populated below in this README file.
 
 ![results](./parsl_ml_in_the_loop.png)
+
+** Solution **
+
+| Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (s
+ec) |
+|------------------|-----------------|--------------------|-----------------|---------------|
+| Parsl + futures | 1   | 0.62   | 14.38 / NA   | 26.59 / NA   |
+| Parsl + file system | 1   | 0.62   | 11.22 / 0.094   | 14.90 / 0.422   |
+| DragonHPC + DDict | 1   | 0.62   | 7.01 / 0.233   | 17.92 / 1.194   |
+| ...   | ...   | ...   | ... / ...  | ... / ...  |
