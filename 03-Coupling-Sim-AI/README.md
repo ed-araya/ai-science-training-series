@@ -64,7 +64,7 @@ The lecture slides can be found in: [slides/ALCF_AI-students-advanced-03.pdf](sl
     dragon 8_dragon_producer_consumer.py
     ```
 
-## Homework
+## Homework: EA Solution
 
 To explore these topics further, please execute and submit the following exercises:
 
