@@ -167,19 +167,31 @@ Please note:
 * For the Parsl + futures implementation, there is no reported IO time since the data is serialized and "streamed" from the main process to the workers. Use the run time values and comparisons with the Parsl + file system implementation results with the same setup (nodes and data size) to infer how this transfer time changes as the problem is scaled up.
 * Parsl and DragonHPC use different methods for launching processes, which can impact the run time reported by the scripts. Focus on the IO time when comparing the DDict and file system performance. 
 
-Note: in the polaris login, cd to correct directory, then qsub -q debug `./9_submit_multinode.sh`
+EA Note: in the polaris login, cd to correct directory, then qsub -q debug `./9_submit_multinode.sh`
 
 | Implementation   | Number of Nodes | Training Data Size (GB) | Simulation Run / IO Time (sec) | Training Run / IO Time (sec) |
 |------------------|-----------------|--------------------|-----------------|---------------|
-|`qsub -q debug ./9_submit_multinode.sh`, producer-consumer.o6792218|
-`qsub -q debug ./9_submit_multinode.sh`, producer-consumer.o6792218
-
-| Parsl + futures  | 1               | 0.62   | 14.38 / NA   | 26.59 / NA   |
+|`qsub -q debug ./9_submit_multinode.sh`, NUM_SIMS=64, GRID_SIZE=512, producer-consumer.o6792218|
+| Parsl + futures     | 1            | 1.25  		  | 14.26 / NA      | 86.46 / NA     |
+| Parsl + file system | 1            | 1.25   		  | 11.41 / 0.116   | 22.64 / 2.138  |
+| DragonHPC + DDict   | 2      	     | 1.25   		  | 6.86 / 0.223    | 30.98/ 2.066   |
+|`qsub -q debug -l select=2 ./9_submit_multinode.sh`, NUM_SIMS=64, GRID_SIZE=512, producer-consumer.o6792246|
+| Parsl + futures     | 2            | 1.25  		  | 14.33 / NA      | 120.49 / NA    |
+| Parsl + file system | 2            | 1.25   		  | 11.28 / 0.113   | 23.66 / 2.177  |
+| DragonHPC + DDict   | 2      	     | 1.25   		  | 6.84 / 0.187    | 33.09 / 2.026  |
+|`qsub -q debug -l select=2 ./9_submit_multinode.sh`, NUM_SIMS=128, GRID_SIZE=512, producer-consumer.o6792267|
+| Parsl + futures     | 2            | 2.50               | 19.66 / NA      |  167.60 / NA     |
+| Parsl + file system Note: data from warmup run, main simulation crashed.| 2  | 2.50 | 19.16 / 0.113   |  98.81/ 2.224  |
+| DragonHPC + DDict   | 2            | 2.50               | 12.01 / 0.117   | 37.34 / 1.967  |
+|Original content:|
+| Parsl + futures     | 1               | 0.62   | 14.38 / NA   | 26.59 / NA   |
 | Parsl + file system | 1   | 0.62   | 11.22 / 0.094   | 14.90 / 0.422   |
-| DragonHPC + DDict| 1   | 0.62   | 7.01 / 0.233   | 17.92 / 1.194   |
+| DragonHPC + DDict   | 1   | 0.62   | 7.01 / 0.233   | 17.92 / 1.194   |
 | ...   | ...      | ...   | ... / ...  | ... / ...  |
 
 
 **Observations**
 
 Write a short paragraph on your observations based on the results collected in the table above. Which solution is best, depending on the size of data being produced and transferred and the number of nodes used? Does this match your expectations? 
+
+The DragonHPC+DDict appears to be the best, the simulation run time increased linearly when doubling NUM_SIMS, but most importantly, the Training Run time did not increase that much when doubling NUM_SIMS. The Parsl + file system crashed twice after the warm up of the NUM_SIMS=128 run, unclear why. Changing from one to two nodes had little effect in the  Parsl + file system run with  NUM_SIMS=64, but it significantly increased the training run time of the Parsl + futures, which I was not expecting. 

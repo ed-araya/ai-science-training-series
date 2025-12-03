@@ -1,0 +1,75 @@
+
+Lmod is automatically replacing "nvidia/24.11" with "gcc-native/14.2".
+
+
+Lmod is automatically replacing "PrgEnv-nvidia/8.6.0" with "PrgEnv-gnu/8.6.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.32
+
+Running producer-consumer scripts
+with 128 simulations of 512 x 512 grid
+
+Let's do a warmup run first with the Parsl + file system implementation (DISCARD THIS DATA)
+Launching 128 simulations on 64 workers to generate training data of size 2.50 GB ...
+Done in 19.16 seconds
+IO time: 0.113 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 98.81 seconds
+IO time: 2.224 seconds
+
+
+Running with Parsl writing to the file system
+Launching 128 simulations on 64 workers to generate training data of size 2.50 GB ...
+Traceback (most recent call last):
+  File "/home/earaya/ai-science-training-series/03-Coupling-Sim-AI/producer-consumer/6_parsl_fs_producer_consumer.py", line 140, in <module>
+    results.append(future.result())
+                   ^^^^^^^^^^^^^^^
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/site-packages/parsl/dataflow/dflow.py", line 328, in handle_exec_update
+    res = self._unwrap_remote_exception_wrapper(future)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/site-packages/parsl/dataflow/dflow.py", line 583, in _unwrap_remote_exception_wrapper
+    result.reraise()
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/site-packages/parsl/app/errors.py", line 114, in reraise
+    raise v
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/site-packages/parsl/app/errors.py", line 138, in wrapper
+    return func(*args, **kwargs)
+^^^^^^^^^^^^^^^
+  File "/home/earaya/ai-science-training-series/03-Coupling-Sim-AI/producer-consumer/6_parsl_fs_producer_consumer.py", line 45, in simulation
+    np.save(f"./data/inputs_{int(period)}.npy", inputs)
+      ^^^^^^^^^^^^^^^^^
+  File "/eagle/ALCFAITP/03-Coupling-Sim-AI/_ai4s_simAI/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 580, in save
+    file_ctx = open(file, "wb")
+  ^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Input/output error: './data/inputs_74.npy'
+
+Running with DragonHPC
+Dragon running on 2 nodes
+['x3006c0s25b0n0', 'x3006c0s1b1n0'] 
+
+Started DDict on 2 nodes with 301.9 GB of memory
+
+Launching 128 simulations on 64 workers to generate training data of size 2.50 GB ...
+Done in 12.01 seconds
+IO time: 0.117 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 37.34 seconds
+IO time: 1.967 seconds
+
+
+Running with Parsl tranfering data through futures (last since it will take longer)
+Launching 128 simulations on 64 workers to generate training data of size 2.50 GB ...
+Done in 19.66 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 167.60 seconds
+
+

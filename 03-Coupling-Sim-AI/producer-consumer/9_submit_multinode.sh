@@ -18,7 +18,7 @@ export TMPDIR=/tmp
 export PATH=$PATH:/opt/pbs/bin
 
 # Set inputs
-NUM_SIMS=64
+NUM_SIMS=128
 GRID_SIZE=512
 
 echo "Running producer-consumer scripts"

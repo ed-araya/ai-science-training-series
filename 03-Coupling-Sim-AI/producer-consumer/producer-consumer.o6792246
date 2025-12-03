@@ -1,0 +1,56 @@
+
+Lmod is automatically replacing "nvidia/24.11" with "gcc-native/14.2".
+
+
+Lmod is automatically replacing "PrgEnv-nvidia/8.6.0" with "PrgEnv-gnu/8.6.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.32
+
+Running producer-consumer scripts
+with 64 simulations of 512 x 512 grid
+
+Let's do a warmup run first with the Parsl + file system implementation (DISCARD THIS DATA)
+Launching 64 simulations on 64 workers to generate training data of size 1.25 GB ...
+Done in 14.61 seconds
+IO time: 0.116 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 101.48 seconds
+IO time: 2.266 seconds
+
+
+Running with Parsl writing to the file system
+Launching 64 simulations on 64 workers to generate training data of size 1.25 GB ...
+Done in 11.28 seconds
+IO time: 0.113 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 23.66 seconds
+IO time: 2.177 seconds
+
+
+Running with DragonHPC
+Dragon running on 2 nodes
+['x3004c0s37b0n0', 'x3004c0s7b0n0'] 
+
+Started DDict on 2 nodes with 301.9 GB of memory
+
+Launching 64 simulations on 64 workers to generate training data of size 1.25 GB ...
+Done in 6.84 seconds
+IO time: 0.187 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 33.09 seconds
+IO time: 2.026 seconds
+
+
+Running with Parsl tranfering data through futures (last since it will take longer)
+Launching 64 simulations on 64 workers to generate training data of size 1.25 GB ...
+Done in 14.33 seconds
+
+Launching 8 CNN models to train on the simulaiton data ...
+Done in 120.49 seconds
+
+
