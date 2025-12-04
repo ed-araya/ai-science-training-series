@@ -33,7 +33,7 @@ The program worked fine the day of the lecture. The R_2.6.0 directory was remove
 pip uninstall peft
 pip install peft==0.17.1
 
-After the compatibility issue was solved, the code seemed to work but it got stocked at “INFO:   Beginning appliance run”.
+After the compatibility issue was solved, the code seemed to work but it got stocked at “INFO:   Beginning appliance run”, after almost 1h, some results were provided: "INFO:   | Train Device=CSX, Step=50, Loss=7.67166, Rate=33.08 samples/sec, GlobalRate=33.01 samples/sec, LoopTimeRemaining=1:18:08, TimeRemaining=1:18:08", but the model was too inefficient to carry out additional tests. 
 
 
 * Sambanova Homework : Use your choice of huggingface dataset and compare the performance on GptOSS model using both Metis and Sophia, reason out the possible differences. 
