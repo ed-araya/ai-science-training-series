@@ -94,7 +94,8 @@ llm = ChatOpenAI(
 )
 
 # Tool list that the LLM can call
-tools = [molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, RMS, getsubdata]
+#tools = [molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, RMS, getsubdata]
+tools = [loadascii, RMS, getsubdata]
 
 # ============================================================
 # 5. Build the graph
