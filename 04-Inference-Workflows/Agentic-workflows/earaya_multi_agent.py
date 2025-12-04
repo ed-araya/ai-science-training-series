@@ -137,7 +137,7 @@ graph = graph_builder.compile()
 # 6. Run / stream the graph
 # ============================================================
 #prompt = "Provide the list of the hyperfine structure energy transitions of the ammonia (7,7) inversion transition, with an accuracy of 10 kHz. Return the results in a JSON."
-prompt = "The file OH_6035MHz_Spec_line.txt in the current directory contains two columns, x = velocity (km/s), y = flux density (Jy). Use the tools to load the data from OH_6035MHz_Spec_line.txt, the output should be a list, name it 'spec'. Report the number of velocity channels in the spectrum."
+prompt = "The file OH_6035MHz_Spec_line.txt in the current directory contains two columns, x = velocity (km/s), y = flux density (Jy). Use the tools to load the data from OH_6035MHz_Spec_line.txt, the output should be a list, name it 'spec'. Based on the spec array, and without using getsubdata, report the number of velocity channels in the spectrum."
 
 
 for chunk in graph.stream(
