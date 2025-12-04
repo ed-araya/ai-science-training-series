@@ -25,7 +25,9 @@ agent = create_agent(llm, tools=tools)
 # Adjust the system prompt if consistent tool usage is required, or specifically tell the agent to "use your tools".
 # prompt = "Calculate the energy of a carbon dioxide molecule using MACE"
 
-prompt = "Optimize the structure of a water molecule using MACE"
+#prompt = "Optimize the structure of a water molecule using MACE"
+#prompt = "Calculate the energy of a carbon dioxide molecule"
+prompt = "Run geometry optimization for a methanol molecule using MACE"
 for chunk in agent.stream(
     {"messages": prompt},
     stream_mode="values",
