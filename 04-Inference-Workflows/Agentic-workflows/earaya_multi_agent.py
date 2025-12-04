@@ -6,7 +6,7 @@ from langgraph.prebuilt import ToolNode
 from langgraph.graph import StateGraph, START, END
 from inference_auth_token import get_access_token
 
-from tools import molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation
+from earaya_tools import molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, getsubdata, RMS
 
 
 # ============================================================
@@ -93,7 +93,7 @@ llm = ChatOpenAI(
 )
 
 # Tool list that the LLM can call
-tools = [molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation]
+tools = [molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, RMS, getsubdata]
 
 # ============================================================
 # 5. Build the graph
@@ -134,10 +134,16 @@ graph = graph_builder.compile()
 # ============================================================
 # 6. Run / stream the graph
 # ============================================================
-prompt = "Provide the list of the hyperfine structure energy transitions of the ammonia (7,7) inversion transition, with an accuracy of 10 kHz. Return the results in a JSON."
+#prompt = "Provide the list of the hyperfine structure energy transitions of the ammonia (7,7) inversion transition, with an accuracy of 10 kHz. Return the results in a JSON."
+prompt = "The file OH_6035MHz_Spec_line.txt in the current directory contains two columns, x = velocity (km/s), y = flux density (Jy). Use the tools to load the data from OH_6035MHz_Spec_line.txt, the output should be a list, name it 'spec'. Report the number of velocity channels in the spectrum."
+
+
 for chunk in graph.stream(
     {"messages": prompt},
     stream_mode="values",
 ):
     new_message = chunk["messages"][-1]
     new_message.pretty_print()
+
+print('Comments: I was trying to make the agent send data from one tool function to another to simulate basic analysis of the noise in a spectrum, but then I found that the agent has issues running the first tool (loadascii), which simply loads some data from a file. Without changing anything, a test resulted in the agent reporting that the dataset had 2000 channels, another test resulted in the agent reporting ~2048 channels. I see lots of promise for agentic workflows for data reduction/analysis in astrophysics, but I will need to play more with the tools to find out the origin of the discrepancies. 
+')
