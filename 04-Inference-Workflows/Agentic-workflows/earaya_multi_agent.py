@@ -146,5 +146,11 @@ for chunk in graph.stream(
     new_message = chunk["messages"][-1]
     new_message.pretty_print()
 
-print('Comments: I was trying to make the agent send data from one tool function to another to simulate basic analysis of the noise in a spectrum, but then I found that the agent has issues running the first tool (loadascii), which simply loads some data from a file. Without changing anything, a test resulted in the agent reporting that the dataset had 2000 channels, another test resulted in the agent reporting ~2048 channels. I see lots of promise for agentic workflows for data reduction/analysis in astrophysics, but I will need to play more with the tools to find out the origin of the discrepancies. 
-')
+print('''Comments: I was trying to make the agent send data from one tool 
+function to another to simulate basic analysis of the noise in a spectrum, 
+but then I found that the agent has issues running the first tool (loadascii), 
+which simply loads some data from a file. Without changing anything, a test 
+resulted in the agent reporting that the dataset had 2000 channels, another 
+test resulted in the agent reporting ~2048 channels. I see lots of promise 
+for agentic workflows for data reduction/analysis in astrophysics, but I will 
+need to play more with the tools to find out the origin of the discrepancies.''')
