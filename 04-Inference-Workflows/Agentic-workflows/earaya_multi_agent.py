@@ -6,7 +6,8 @@ from langgraph.prebuilt import ToolNode
 from langgraph.graph import StateGraph, START, END
 from inference_auth_token import get_access_token
 
-from earaya_tools import molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, getsubdata, RMS
+#from earaya_tools import molecule_name_to_smiles, smiles_to_coordinate_file, run_mace_calculation, loadascii, getsubdata, RMS
+from earaya_tools import loadascii, getsubdata, RMS
 
 
 # ============================================================
@@ -46,7 +47,7 @@ def route_tools(state: State):
 # ============================================================
 # 3. LLM node: the "agent"
 # ============================================================
-def chem_agent(
+def ea_agent(
     state: State,
     llm: ChatOpenAI,
     tools: list,
@@ -102,8 +103,8 @@ graph_builder = StateGraph(State)
 
 # Agent node: calls LLM, which may decide to call tools
 graph_builder.add_node(
-    "chem_agent",
-    lambda state: chem_agent(state, llm=llm, tools=tools),
+    "ea_agent",
+    lambda state: ea_agent(state, llm=llm, tools=tools),
 )
 graph_builder.add_node(
     "structured_output_agent",
@@ -115,16 +116,16 @@ tool_node = ToolNode(tools)
 graph_builder.add_node("tools", tool_node)
 
 # Graph logic
-# START -> chem_agent
-graph_builder.add_edge(START, "chem_agent")
+# START -> ea_agent
+graph_builder.add_edge(START, "ea_agent")
 
-# After chem_agent runs, check if we need to run tools
+# After ea_agent runs, check if we need to run tools
 graph_builder.add_conditional_edges(
-    "chem_agent", route_tools, {"tools": "tools", "done": "structured_output_agent"}
+    "ea_agent", route_tools, {"tools": "tools", "done": "structured_output_agent"}
 )
 
 # After tools run, go back to the agent so it can use tool results
-graph_builder.add_edge("tools", "chem_agent")
+graph_builder.add_edge("tools", "ea_agent")
 
 # After structured_output_agent, terminate the graph
 graph_builder.add_edge("structured_output_agent", END)
